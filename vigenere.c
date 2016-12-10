@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-//printf ("%c", ((m[i] - 'A' + k) % 26 + 'A'));
 
 
 int main (int argc, string argv[])
@@ -18,7 +17,10 @@ int main (int argc, string argv[])
   string k = argv[1];
   string p;
 
-  for (int i = 0, n = strlen(k); i < n; i++) //Check
+  printf ("What string do you wish to encrypt?\n");
+  p = GetString();
+
+  /*for (int i = 0, n = strlen(k); i < n; i++) //Check
     {
       if (isalpha(k[i]))
         {
@@ -31,13 +33,14 @@ int main (int argc, string argv[])
           return 1;
         }
     }
+*/
+    for (int j = 0, m = strlen(p); j < m; j++)
+      {
+        printf ("%c", ((p[j] - 'a' + (k[j] % strlen(k)) % 26 + 'a')));
+      }
+      //printf ("%c", ((m[i] - 'A' + k) % 26 + 'A'));
 
-  for (int j = 0, m = strlen(p); j < m; j++)
-    {
-      for (int x = 0, y = strlen(k); x < y; x++)
-        {
-          printf ("%c", p[x] + k [x]);
-        }
-    }
+
+    printf ("\n");
 
 }
