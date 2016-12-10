@@ -6,7 +6,7 @@
 int main(void)
 
   {
-    printf ("What is your name? ");
+    printf ("Word to Initialize ");
     string name = GetString();
 
     for (int i = 0, n = strlen(name); i < n; i++)
@@ -14,6 +14,18 @@ int main(void)
         if (isalpha(name[i]))
           {
             printf ("%c", toupper(name[i]));
+          }
+        else if (isspace(name[i]))
+          {
+            printf (" ");
+          }
+
+          
+
+        else
+          {
+            printf ("Please provide only words\n");
+            return 1;
           }
       }
     printf ("\n");
